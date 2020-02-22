@@ -18,6 +18,7 @@ module.exports.router = (req, res, next = ()=>{}) => {
   if (req.method === 'GET') {
     //define a random directional response
     var commands = ['up', 'down', 'left', 'right'];
+    //return a random direction
     res.end(commands[Math.floor(Math.random() * commands.length)]);
     // res.end('up');
   }

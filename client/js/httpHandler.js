@@ -2,8 +2,24 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
 
+  //setInterval(getDirections, 1000);
+
   //
   // TODO: build the swim command fetcher here
+  var getDirections = () => {
+    $.ajax(
+      {
+        type: 'GET',
+        url: serverUrl,
+        success: (data) => {
+          SwimTeam.move(data); //for the random direction we can instantly execute the command
+          console.log(data);
+          setTimeout(getDirections, 1000);
+        },
+        datatype: 'string'
+      }
+    );
+  };
   //
 
   /////////////////////////////////////////////////////////////////////
@@ -45,5 +61,6 @@
 
     ajaxFileUplaod(file);
   });
+getDirections();
 
 })();
