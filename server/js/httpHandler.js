@@ -29,9 +29,18 @@ module.exports.router = (req, res, next = ()=>{}) => {
     }
     res.end();
     next(); // invoke next() at the end of a request to help with testing!
-  } else if (req.url === './spec/water-lg.jpg') {
+  } else if (req.url === '/background.jpg') {
     res.writeHead(200, headers);
-    res.end();
+    if (req.method === 'GET') {
+      var image = fs.readFile('background.jpg', (err, image) => {
+      if (err) { throw err; }
+      res.end(image);
+      })
+    }
+    // if (req.method === 'POST') {
+
+    // }
+    //res.end(image);
     next();
     }
     else {
