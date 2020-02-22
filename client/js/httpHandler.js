@@ -13,8 +13,7 @@
         url: serverUrl,
         success: (data) => {
           SwimTeam.move(data); //for the random direction we can instantly execute the command
-          console.log(data);
-          setTimeout(getDirections, 1000);
+          //setTimeout(getDirections, 1000);
         },
         datatype: 'string'
       }
@@ -61,6 +60,6 @@
 
     ajaxFileUplaod(file);
   });
-getDirections();
+setInterval(getDirections, 100); //setInterval handles if the server fails to return a direction with Get (which it might if the queue is empty)
 
 })();
