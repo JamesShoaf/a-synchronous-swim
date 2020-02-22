@@ -19,11 +19,12 @@ module.exports.router = (req, res, next = ()=>{}) => {
   res.writeHead(200, headers);
   if (req.method === 'GET') {
     //define a random directional response
-    var commands = ['up', 'down', 'left', 'right'];
-    //return a random direction
-    res.end(commands[Math.floor(Math.random() * commands.length)]);
-    // res.end('up');
-    //res.end(messages.dequeue())
+    // var commands = ['up', 'down', 'left', 'right'];
+    // //return a random direction
+    // res.end(commands[Math.floor(Math.random() * commands.length)]);
+    // // res.end('up');
+    res.end(messages.dequeue())
+    
   }
   res.end();
   next(); // invoke next() at the end of a request to help with testing!
