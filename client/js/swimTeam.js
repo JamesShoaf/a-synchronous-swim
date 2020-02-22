@@ -35,7 +35,9 @@ const SwimTeam = {
       return false;
     }
     if (['left', 'right', 'up', 'down'].indexOf(direction) < 0 ) {
-      console.log(`Ignoring command: ${direction}`);
+      if(direction !== 'empty') {
+        console.log(`Ignoring command: ${direction}`);
+      }
       return false;
     }
     return true;
@@ -65,7 +67,7 @@ const SwimTeam = {
         SwimTeam.coords.left += 5;
       }
       break;
-    } 
+    }
   }
 
 };

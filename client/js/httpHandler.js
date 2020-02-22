@@ -14,6 +14,7 @@
         success: (data) => {
           SwimTeam.move(data); //for the random direction we can instantly execute the command
           //setTimeout(getDirections, 1000);
+          
         },
         datatype: 'string'
       }
@@ -21,17 +22,17 @@
   };
   //
 
-  var sendDirectionsToQueue = (direction) => {
-    $.ajax({
-      type: 'POST',
-      data: direction,
-      url: serverUrl,
-      cache: false,
-      contentType: false,
-      processData: false,
-      success: (direction) => {console.log(`POST successful! Enqueueing: ${direction}`)}
-    });
-  };
+  // var sendDirectionsToQueue = (direction) => {
+  //   $.ajax({
+  //     type: 'POST',
+  //     data: direction,
+  //     url: serverUrl,
+  //     cache: false,
+  //     contentType: false,
+  //     processData: false,
+  //     success: (direction) => {console.log(`POST successful! Enqueueing: ${direction}`)}
+  //   });
+  // };
   //
 
   /////////////////////////////////////////////////////////////////////

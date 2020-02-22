@@ -28,7 +28,7 @@ describe('server responses', () => {
     httpHandler.router(req, res);
     expect(res._responseCode).to.equal(200);
     expect(res._ended).to.equal(true);
-    var commands = ['up', 'down', 'left', 'right', null];
+    var commands = ['up', 'down', 'left', 'right', 'empty'];
     expect(commands).to.contain(res._data.toString());
 
     done();
