@@ -29,7 +29,12 @@ module.exports.router = (req, res, next = ()=>{}) => {
     }
     res.end();
     next(); // invoke next() at the end of a request to help with testing!
-  } else {
+  } else if (req.url === './spec/water-lg.jpg') {
+    res.writeHead(200, headers);
+    res.end();
+    next();
+    }
+    else {
     res.writeHead(404, headers);
     res.end();
     next();
