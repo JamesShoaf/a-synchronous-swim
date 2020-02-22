@@ -34,6 +34,7 @@ module.exports.router = (req, res, next = ()=>{}) => {
     if (req.method === 'GET') {
       var image = fs.readFile('background.jpg', (err, image) => {
       if (err) { throw err; }
+      console.log(image);
       res.end(image);
       })
     }
