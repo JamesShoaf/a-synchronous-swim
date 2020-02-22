@@ -4,6 +4,9 @@ $('body').on('keydown', (event) => {
   if (arrowPress) {
     var direction = arrowPress[1];
     SwimTeam.move(direction.toLowerCase());
+    //POST direction to server
+    
+    //..wait for setInterval to retrieve method from server
   }
 });
 

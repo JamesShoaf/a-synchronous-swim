@@ -28,11 +28,15 @@ describe('server responses', () => {
     httpHandler.router(req, res);
     expect(res._responseCode).to.equal(200);
     expect(res._ended).to.equal(true);
-    var commands = ['up', 'down', 'left', 'right'];
+    var commands = ['up', 'down', 'left', 'right', null];
     expect(commands).to.contain(res._data.toString());
 
     done();
   });
+
+  // it('should enqueue and dequeue keystrokes', (done) => {
+    //how would we write this test? ignoring for now
+  // });
 
   xit('should respond with 404 to a GET request for a missing background image', (done) => {
     httpHandler.backgroundImageFile = path.join('.', 'spec', 'missing.jpg');

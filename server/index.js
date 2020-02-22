@@ -1,4 +1,4 @@
-
+const messageQueue = require('./js/messageQueue');
 
 
 const keypressHandler = require('./js/keypressHandler');

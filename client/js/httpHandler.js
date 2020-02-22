@@ -21,6 +21,19 @@
   };
   //
 
+  var sendDirectionsToQueue = (direction) => {
+    $.ajax({
+      type: 'POST',
+      data: direction,
+      url: serverUrl,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: (direction) => {console.log(`POST successful! Enqueueing: ${direction}`)}
+    });
+  };
+  //
+
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
   // Note: remember to fix the URL below.
@@ -60,6 +73,6 @@
 
     ajaxFileUplaod(file);
   });
-setInterval(getDirections, 100); //setInterval handles if the server fails to return a direction with Get (which it might if the queue is empty)
+setInterval(getDirections, 2000); //setInterval handles if the server fails to return a direction with Get (which it might if the queue is empty)
 
 })();
